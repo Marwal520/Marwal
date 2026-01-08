@@ -3,47 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wall Hanging - Marwal</title>
+<title>Marwal - Wall Hanging</title>
+
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 <style>
-/* نفس ستايل الصفحة الرئيسية */
-body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#e7d8bd;color:#333;}
-header{text-align:center;padding:70px 20px;background:#233416;}
-header h1{font-family:'Great Vibes',cursive;font-size:4.5em;color:#e7d8bd;margin:0;}
-header p{font-family:'Montserrat',sans-serif;color:#f5f5dc;margin-top:10px;font-size:1.2em;}
-.products{display:flex;flex-wrap:wrap;justify-content:center;padding:50px 20px;}
-.product{background:white;border-radius:12px;margin:10px;width:250px;text-align:center;padding:15px;box-shadow:0 6px 12px rgba(0,0,0,0.1);}
-.product img{width:100%;height:180px;object-fit:cover;border-radius:10px;}
-.product h3{font-family:'Montserrat',sans-serif;font-weight:700;color:#233416;font-size:1.2em;margin:10px 0 5px 0;}
-.product .price{font-weight:700;color:#233416;font-size:1.1em;margin-top:5px;}
-.contact{text-align:center;padding:40px 20px;background:#e7d8bd;}
-.contact a{display:inline-block;margin:8px;padding:12px 22px;background:#233416;color:white;text-decoration:none;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:16px;}
-.contact a i{margin-right:8px;}
-.contact a:hover{background:#19250f;}
-footer{text-align:center;padding:20px;background:#233416;color:white;font-family:'Montserrat',sans-serif;}
+    body{
+        font-family:'Roboto',sans-serif;
+        margin:0;
+        padding:0;
+        background:#e7d8bd; /* بيج رملي */
+        color:#333;
+    }
+
+    header{
+        text-align:center;
+        padding:70px 20px;
+        background:#233416; /* زيتي داكن */
+    }
+
+    header h1{
+        font-family:'Great Vibes',cursive;
+        font-size:4.5em;
+        color:#e7d8bd;  /* Marwal بيج رملي */
+        margin:0;
+    }
+
+    header p{
+        font-family:'Montserrat',sans-serif;
+        color:#f5f5dc;
+        margin-top:10px;
+        font-size:1.2em;
+    }
+
+    /* المنتجات */
+    .products{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        padding:40px 20px;
+    }
+
+    .product{
+        background:#fff;
+        border-radius:12px;
+        margin:15px;
+        padding:15px;
+        width:280px;
+        text-align:center;
+        box-shadow:0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .product img{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+        border-radius:10px;
+    }
+
+    .product h3{
+        margin:10px 0 5px 0;
+        color:#233416; /* زيتي غامق */
+        font-family:'Montserrat',sans-serif;
+        font-weight:700;
+        font-size:1.2em;
+    }
+
+    .price{
+        font-weight:700;
+        color:#233416; /* زيتي غامق */
+        font-size:1.1em;
+        margin-top:5px;
+    }
+
+    .details{
+        font-size:0.85em;
+        color:#666;
+        margin-top:5px;
+        text-align:left;
+    }
+
+    .order-btn{
+        display:inline-block;
+        margin-top:10px;
+        padding:10px 18px;
+        background:#233416;
+        color:#e7d8bd;
+        text-decoration:none;
+        border-radius:6px;
+        font-weight:700;
+    }
+
+    .order-btn:hover{
+        background:#19250f;
+    }
+
+    .contact{
+        text-align:center;
+        padding:40px 20px;
+        background:#e7d8bd;
+    }
+
+    .contact a{
+        display:inline-block;
+        margin:8px;
+        padding:12px 22px;
+        background:#233416;
+        color:white;
+        text-decoration:none;
+        border-radius:7px;
+        font-family:'Montserrat',sans-serif;
+        font-size:16px;
+    }
+
+    .contact a i{
+        margin-right:8px;
+    }
+
+    .contact a:hover{
+        background:#19250f;
+    }
+
+    footer{
+        text-align:center;
+        padding:20px;
+        background:#233416;
+        color:white;
+        font-family:'Montserrat',sans-serif;
+    }
 </style>
 </head>
 <body>
 
 <header>
     <h1>Marwal</h1>
-    <p>Wall Hanging Collection</p>
+    <p>Wall Hanging Products</p>
 </header>
 
 <section class="products">
-    <!-- 30 منتج -->
-    <!-- كرري div.product وعدلي الصور والأسماء والأسعار -->
-    <div class="product"><img src="https://via.placeholder.com/250x180.png?text=Wall+Hanging+1" alt="Wall Hanging 1"><h3>Wall Hanging 1</h3><p class="price">250 EGP</p></div>
-    <div class="product"><img src="https://via.placeholder.com/250x180.png?text=Wall+Hanging+2" alt="Wall Hanging 2"><h3>Wall Hanging 2</h3><p class="price">260 EGP</p></div>
-    <div class="product"><img src="https://via.placeholder.com/250x180.png?text=Wall+Hanging+3" alt="Wall Hanging 3"><h3>Wall Hanging 3</h3><p class="price">270 EGP</p></div>
-    <!-- كرري للباقي حتى 30 -->
+    <!-- منتج 1 -->
+    <div class="product">
+        <img src="https://i.postimg.cc/65S7dqS6/Picsart-24-12-13-17-10-16-383.jpg" alt="FLORA Wall Hanging">
+        <h3>FLORA Wall Hanging</h3>
+        <p class="price">1500 L.E <span style="font-size:0.9em; color:#555;">after discount: 1200 L.E</span></p>
+        <p class="details">
+            Measurements: 100×110cm<br>
+            Color: pure creamy white<br>
+            Material: 100% cotton & wood
+        </p>
+        <a href="https://www.facebook.com/share/1DF5Z7pEuE/" target="_blank" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- منتج 2 -->
+    <div class="product">
+        <img src="https://via.placeholder.com/280x180.png?text=Product+2" alt="Product 2">
+        <h3>Product Name 2</h3>
+        <p class="price">2000 L.E <span style="font-size:0.9em; color:#555;">after discount: 1800 L.E</span></p>
+        <p class="details">
+            Measurements: 120×100cm<br>
+            Color: beige & white<br>
+            Material: 100% cotton
+        </p>
+        <a href="https://www.facebook.com/share/1DF5Z7pEuE/" target="_blank" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- منتج 3 -->
+    <div class="product">
+        <img src="https://via.placeholder.com/280x180.png?text=Product+3" alt="Product 3">
+        <h3>Product Name 3</h3>
+        <p class="price">1800 L.E <span style="font-size:0.9em; color:#555;">after discount: 1600 L.E</span></p>
+        <p class="details">
+            Measurements: 90×100cm<br>
+            Color: cream<br>
+            Material: 100% cotton & wood
+        </p>
+        <a href="https://www.facebook.com/share/1DF5Z7pEuE/" target="_blank" class="order-btn">Order Now</a>
+    </div>
+
+    <!-- ممكن تضيف باقي المنتجات بنفس الطريقة -->
 </section>
 
 <section class="contact">
     <h2>Contact Us</h2>
-    <a href="https://www.instagram.com/marwal.11?igsh=MXJjMWE5c3l5MG1tbQ==" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
-    <a href="https://www.facebook.com/share/1ASA6T4iAu/" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+
+    <a href="https://www.instagram.com/marwal.eg?igsh=MXJjMWE5c3l5MG1tbQ==" target="_blank">
+        <i class="fab fa-instagram"></i>Instagram
+    </a>
+
+    <a href="https://www.facebook.com/share/1DF5Z7pEuE/" target="_blank">
+        <i class="fab fa-facebook"></i>Messenger
+    </a>
 </section>
 
 <footer>
