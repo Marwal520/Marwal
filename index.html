@@ -1,229 +1,353 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARWAL | Luxury Macrame Boutique</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-<title>Marwal Handmade</title>
+    <style>
+        :root {
+            --brand-green: #0b2b1a; /* من لوجو Marwal الأصلي */
+            --brand-gold: #e1c7a5;  /* من لوجو Marwal الأصلي */
+            --white: #ffffff;
+            --soft-bg: #fcfaf7; /* Off-white للخلفية */
+            --dark-grey: #333333;
+        }
 
-<meta property="og:title" content="Marwal - Handmade Boho Macrame Products">
-<meta property="og:description" content="أفضل قطع مكرمية يدوية لـ Ramadan والمناسبات من Marwal">
-<meta property="og:image" content="https://i.postimg.cc/mr6mnwjG/FB-IMG-1754667050037.jpg">
-<meta property="og:url" content="https://marwal520.github.io/MARWAL/">
-<meta property="og:type" content="website">
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--soft-bg);
+            color: var(--dark-grey);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        /* Navbar Style - Clean & Elegant */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            display: flex; justify-content: space-between;
+            align-items: center; padding: 25px 5%;
+            z-index: 1000;
+            transition: background 0.5s ease, padding 0.5s ease;
+            background: transparent;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        nav.scrolled {
+            background: var(--brand-green);
+            padding: 15px 5%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
 
-<style>
-    body{
-        font-family:'Roboto',sans-serif;
-        margin:0;
-        padding:0;
-        background:#e7d8bd;
-        color:#333;
-        overflow-x: hidden;
-    }
+        nav.scrolled .nav-logo, nav.scrolled .nav-links a {
+            color: var(--brand-gold) !important;
+        }
 
-    /* --- زينة رمضان (مستوحاة من الصور) --- */
-    .ramadan-decor {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        pointer-events: none;
-        z-index: 10;
-    }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--white);
+            transition: color 0.5s ease;
+        }
 
-    .decor-item {
-        position: relative;
-        animation: sway 4s ease-in-out infinite;
-        transform-origin: top;
-    }
+        .nav-logo .macrame-motif {
+            display: inline-block;
+            transform: scale(0.8) translateY(-2px); /* تصغير شكل المكرمية */
+            color: var(--brand-gold); /* لون ذهبي للمكرمية */
+            margin-right: 5px; /* مسافة بسيطة */
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            margin-left: 40px;
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: color 0.5s ease;
+        }
 
-    /* الخيط المتدلي */
-    .decor-item::before {
-        content: '';
-        display: block;
-        width: 1px;
-        height: 60px;
-        background: rgba(231, 216, 189, 0.5);
-        margin: 0 auto;
-    }
+        .nav-links a:hover {
+            color: var(--brand-gold) !important;
+        }
 
-    .decor-item i {
-        color: #e7d8bd;
-        font-size: 1.2rem;
-    }
+        /* Hero Section - Full Screen & Luxurious */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://i.postimg.cc/mr6mnwjG/FB-IMG-1754667050037.jpg') center/cover no-repeat;
+            background-attachment: fixed; /* لتأثير Parallax */
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; color: var(--white);
+            position: relative;
+        }
 
-    @keyframes sway {
-        0%, 100% { transform: rotate(-5deg); }
-        50% { transform: rotate(5deg); }
-    }
+        .hero::before { /* تأثير رمضان خفي جداً */
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/islamic-art.png');
+            opacity: 0.05;
+            z-index: 1;
+        }
 
-    header{
-        position: relative;
-        text-align:center;
-        padding:100px 20px 70px; /* زيادة التوب عشان الزينة */
-        background:#233416;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
 
-    /* --- زر New Collection (إطار أبيض، شفاف، كلمة بيضاء) --- */
-    .new-collection-btn {
-        background: transparent;
-        color: white;
-        border: 1px solid white;
-        padding: 10px 25px;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 0.8rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        text-decoration: none;
-        margin-bottom: 20px;
-        transition: 0.3s;
-    }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 400;
+            margin: 0;
+            color: var(--white);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
-    .new-collection-btn:hover {
-        background: white;
-        color: #233416;
-    }
+        .hero p {
+            font-size: 1.1rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.8);
+        }
 
-    header h1{
-        font-family:'Great Vibes',cursive;
-        font-size:4.5em;
-        color:#e7d8bd;
-        margin:0;
-    }
+        .btn-discover {
+            padding: 18px 50px;
+            border: 1px solid var(--brand-gold);
+            color: var(--brand-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
 
-    header p{
-        font-family:'Montserrat',sans-serif;
-        color:#f5f5dc;
-        margin-top:10px;
-        font-size:1.2em;
-    }
+        .btn-discover:hover {
+            background: var(--brand-gold);
+            color: var(--brand-green);
+        }
 
-    .categories{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        padding:50px 20px;
-    }
+        /* Collection Grid - Elegant & Minimalist */
+        .collection-section {
+            padding: 100px 5%;
+            background-color: var(--soft-bg);
+        }
 
-    .category{
-        background:#233416;
-        border-radius:14px;
-        margin:15px;
-        width:250px;
-        text-align:center;
-        padding:25px 15px;
-        box-shadow:0 8px 18px rgba(0,0,0,0.12);
-        cursor:pointer;
-        transition:transform 0.3s;
-    }
+        .section-title-elegant {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            color: var(--dark-grey);
+        }
 
-    .category:hover{
-        transform: translateY(-8px);
-    }
+        .section-title-elegant::after {
+            content: "";
+            display: block;
+            width: 60px; height: 1px;
+            background-color: var(--brand-gold);
+            margin: 20px auto 0;
+        }
 
-    .category h3{
-        font-family:'Montserrat',sans-serif;
-        color:#e7d8bd;
-        font-weight:700;
-        font-size:1.4em;
-        margin:0;
-    }
+        .grid-luxury {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
 
-    .contact{
-        text-align:center;
-        padding:40px 20px;
-        background:#e7d8bd;
-    }
+        .grid-item {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background-color: var(--white);
+            transition: transform 0.4s ease;
+        }
 
-    .contact a{
-        display:inline-block;
-        margin:8px;
-        padding:12px 22px;
-        background:#233416;
-        color:#f5e6c8;
-        text-decoration:none;
-        border-radius:7px;
-        font-family:'Montserrat',sans-serif;
-        font-size:16px;
-    }
+        .grid-item:hover {
+            transform: translateY(-10px);
+        }
 
-    .contact a i{
-        margin-right:8px;
-    }
+        .grid-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
 
-    .contact a:hover{
-        background:#19250f;
-    }
+        .grid-item:hover img {
+            transform: scale(1.05);
+        }
 
-    footer{
-        text-align:center;
-        padding:20px;
-        background:#233416;
-        color:white;
-        font-family:'Montserrat',sans-serif;
-    }
-</style>
+        .item-overlay {
+            position: absolute;
+            bottom: 40px; left: 40px;
+            color: var(--white);
+            text-align: left;
+            z-index: 5;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        }
+
+        .item-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+
+        .item-overlay .sub-text {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Footer - Sophisticated & Clean */
+        footer {
+            background: var(--brand-green);
+            color: var(--brand-gold);
+            padding: 80px 5% 50px;
+            text-align: center;
+        }
+
+        .footer-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+
+        .footer-logo-text .macrame-motif {
+            display: inline-block;
+            transform: scale(0.8) translateY(-2px); /* تصغير شكل المكرمية */
+            color: var(--brand-gold); /* لون ذهبي للمكرمية */
+            margin-right: 5px; /* مسافة بسيطة */
+        }
+
+        .social-links {
+            margin-bottom: 40px;
+        }
+
+        .social-links a {
+            color: var(--brand-gold);
+            font-size: 1.6rem;
+            margin: 0 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            letter-spacing: 1px;
+            color: rgba(225, 199, 165, 0.7);
+        }
+
+        @media (max-width: 992px) {
+            .grid-luxury { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+            .section-title-elegant { font-size: 2.2rem; }
+            .nav-links { display: none; /* ممكن تعملي Hamburger menu هنا */ }
+        }
+    </style>
 </head>
 <body>
 
-<div class="ramadan-decor">
-    <div class="decor-item"><i class="fa-solid fa-moon"></i></div>
-    <div class="decor-item" style="animation-delay: 0.5s;"><i class="fa-solid fa-star"></i></div>
-    <div class="decor-item"><i class="fa-solid fa-lightbulb"></i></div>
-    <div class="decor-item" style="animation-delay: 0.8s;"><i class="fa-solid fa-star"></i></div>
-    <div class="decor-item"><i class="fa-solid fa-moon"></i></div>
-</div>
+    <nav id="navbar">
+        <a href="#" class="nav-logo">
+            <span class="macrame-motif">𓊭</span> MARWAL
+        </a>
+        <div class="nav-links">
+            <a href="#">New Arrivals</a>
+            <a href="#">Collections</a>
+            <a href="#">Ramadan Edit</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
 
-<header>
-    <a href="new-collection.html" class="new-collection-btn">New Collection</a>
-    
-    <h1>Marwal</h1>
-    <p>Handmade Boho Macrame Products</p>
-</header>
+    <section class="hero">
+        <div class="hero-content">
+            <p>Ramadan 2026 Collection</p>
+            <h1>The Art of Knotting</h1>
+            <a href="#new-collection" class="btn-discover">Explore Now</a>
+        </div>
+    </section>
 
-<section class="categories">
-    <div class="category" onclick="window.location.href='wall-hanging.html'">
-        <h3>Wall Hanging</h3>
-    </div>
+    <section class="collection-section" id="new-collection">
+        <h2 class="section-title-elegant">New Arrivals</h2>
+        
+        <div class="grid-luxury">
+            <div class="grid-item" onclick="window.location.href='wall-hangings.html'">
+                <img src="https://i.postimg.cc/mr6mnwjG/FB-IMG-1754667050037.jpg" alt="Exquisite Wall Hangings">
+                <div class="item-overlay">
+                    <h3>Wall Hangings</h3>
+                    <p class="sub-text">Handcrafted Elegance</p>
+                </div>
+            </div>
+            
+            <div class="grid-item" onclick="window.location.href='ramadan-decor.html'">
+                <img src="https://i.postimg.cc/mr6mnwjG/FB-IMG-1754667050037.jpg" alt="Ramadan Decorations">
+                <div class="item-overlay">
+                    <h3>Ramadan Decor</h3>
+                    <p class="sub-text">Festive Home Accents</p>
+                </div>
+            </div>
 
-    <div class="category" onclick="window.location.href='bag.html'">
-        <h3>Bag</h3>
-    </div>
+            <div class="grid-item" onclick="window.location.href='bags.html'">
+                <img src="https://i.postimg.cc/mr6mnwjG/FB-IMG-1754667050037.jpg" alt="Macrame Bags">
+                <div class="item-overlay">
+                    <h3>Macrame Bags</h3>
+                    <p class="sub-text">Chic & Unique</p>
+                </div>
+            </div>
+            
+            <div class="grid-item" onclick="window.location.href='other-items.html'">
+                <img src="https://i.postimg.cc/mr6mnwjG/FB-IMG-1754667050037.jpg" alt="Other Macrame Products">
+                <div class="item-overlay">
+                    <h3>Other Creations</h3>
+                    <p class="sub-text">Discover More</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="category" onclick="window.location.href='ramadan-decoration.html'">
-        <h3>Ramadan Decoration</h3>
-    </div>
+    <footer>
+        <div class="footer-logo-text">
+            <span class="macrame-motif">𓊭</span> MARWAL
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/marwal.eg" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1asa6t4iau/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p class="copyright">&copy; 2026 MARWAL HANDMADE. ALL RIGHTS RESERVED.</p>
+    </footer>
 
-    <div class="category" onclick="window.location.href='other.html'">
-        <h3>Other</h3>
-    </div>
-</section>
-
-<section class="contact">
-    <h2>Contact Us</h2>
-
-    <a href="https://www.instagram.com/marwal.eg?igsh=MXJjMWE5c3l5MG1tbQ==" target="_blank">
-        <i class="fab fa-instagram"></i>Instagram
-    </a>
-
-    <a href="https://www.facebook.com/share/1ASA6T4iAu/" target="_blank">
-        <i class="fab fa-facebook"></i>Facebook
-    </a>
-
-</section>
-
-<footer>
-    <p>© 2025 Marwal Handmade</p>
-</footer>
-
+    <script>
+        // Navbar scroll effect
+        window.onscroll = function() {
+            const nav = document.getElementById('navbar');
+            if (window.pageYOffset > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+    </script>
 </body>
 </html>
