@@ -10,24 +10,22 @@
 
     <style>
         :root {
-            --dark-green: #4a5d45; /* الأخضر الهادئ في الصورة */
+            --dark-green: #4a5d45; 
             --gold: #d4af37;
-            --beige: #f4f1e6; /* البيج الفاتح */
+            --beige: #f4f1e6;
         }
 
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             background-color: var(--beige);
             font-family: 'Cairo', sans-serif;
-            color: #333;
         }
 
-        /* --- زينة رمضان الذهبية المتدلية --- */
-        .ramadan-header {
+        /* --- الهيدر الرمضاني الفخم --- */
+        header {
             position: relative;
             background-color: var(--dark-green);
-            height: 450px;
+            min-height: 450px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -35,56 +33,58 @@
             text-align: center;
             color: white;
             overflow: hidden;
+            padding-top: 50px;
         }
 
-        .decoration-string {
+        /* حبل الزينة الذهبي (فوانيس ونجوم) */
+        .ramadan-lights {
             position: absolute;
             top: 0;
+            left: 0;
             width: 100%;
-            height: 180px;
+            height: 150px;
             background-image: url('https://www.transparentpng.com/download/ramadan-lantern/gold-ramadan-lanterns-hanging-stars-moon-png-P0C9i4.png');
             background-repeat: repeat-x;
             background-size: contain;
-            opacity: 0.9;
-            z-index: 1;
+            z-index: 10;
+            filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.4));
         }
 
-        /* --- محتوى الهيدر --- */
         .header-content {
             position: relative;
-            z-index: 2;
-            margin-top: 60px;
+            z-index: 20;
+            margin-top: 40px;
         }
 
         .header-content h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
+            font-size: 5.5rem;
             margin: 0;
             color: var(--beige);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .header-content p {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
             font-weight: 300;
         }
 
-        /* --- زر New Collection المطلوب --- */
+        /* --- زرار New Collection (شفاف ببرواز أبيض) --- */
         .new-collection-btn {
             display: inline-block;
-            padding: 12px 35px;
-            border: 1px solid white;
-            background: transparent;
-            color: white;
+            padding: 12px 40px;
+            border: 2px solid white; /* برواز أبيض */
+            background: transparent; /* خلفية شفافة */
+            color: white; /* كتابة بيضاء */
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            transition: 0.4s ease;
             text-transform: uppercase;
+            font-weight: 400;
         }
 
         .new-collection-btn:hover {
@@ -92,84 +92,90 @@
             color: var(--dark-green);
         }
 
-        /* --- قسم التصنيفات (Categories) --- */
-        .section-title {
-            padding: 40px 5% 10px;
-            font-size: 1.5rem;
+        /* --- قسم التصنيفات --- */
+        .categories-container {
+            padding: 50px 8%;
+        }
+
+        .section-h {
+            font-size: 1.8rem;
             color: var(--dark-green);
-            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: right;
+            border-right: 4px solid var(--gold);
+            padding-right: 15px;
         }
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            padding: 20px 5%;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
-        .cat-box {
+        .cat-card {
             background-color: var(--dark-green);
             color: var(--beige);
-            height: 120px;
+            height: 150px;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
             transition: 0.3s;
-            padding: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .cat-box:hover {
-            transform: translateY(-5px);
-            filter: brightness(1.2);
+        .cat-card:hover {
+            transform: translateY(-8px);
+            background-color: #3a4a36;
         }
 
-        /* --- قسم التواصل --- */
-        .contact-section {
-            padding: 40px 5%;
+        /* --- التواصل --- */
+        .contact-area {
+            background-color: var(--beige);
+            padding: 50px 8%;
+            text-align: center;
         }
 
-        .contact-section h2 {
-            color: var(--dark-green);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-links {
+        .social-buttons {
             display: flex;
-            gap: 20px;
-            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
         }
 
-        .contact-links a {
+        .social-btn {
             text-decoration: none;
             color: white;
             background-color: var(--dark-green);
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 12px 30px;
+            border-radius: 2px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
+            gap: 12px;
+            font-size: 1rem;
+            transition: 0.3s;
         }
+
+        .social-btn:hover { opacity: 0.9; transform: scale(1.05); }
 
         footer {
             text-align: center;
             padding: 40px;
+            background-color: var(--dark-green);
+            color: white;
             font-size: 0.8rem;
-            color: #777;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
     </style>
 </head>
 <body>
 
-    <header class="ramadan-header">
-        <div class="decoration-string"></div>
+    <header>
+        <div class="ramadan-lights"></div>
         
         <div class="header-content">
             <h1>Marwal</h1>
@@ -178,28 +184,30 @@
         </div>
     </header>
 
-    <div class="section-title">Categories</div>
-    <section class="categories-grid">
-        <a href="wall-hanging.html" class="cat-box">Wall-Hanging</a>
-        <a href="bag.html" class="cat-box">Bag</a>
-        <a href="ramadan-decoration.html" class="cat-box">Ramadan Decoration</a>
-        <a href="other.html" class="cat-box">Other</a>
+    <section class="categories-container">
+        <h2 class="section-h">التصنيفات</h2>
+        <div class="categories-grid">
+            <a href="bag.html" class="cat-card">Bag</a>
+            <a href="wall-hanging.html" class="cat-card">Wall-Hanging</a>
+            <a href="other.html" class="cat-card">Other</a>
+            <a href="ramadan-decoration.html" class="cat-card">Ramadan Decoration</a>
+        </div>
     </section>
 
-    <section class="contact-section">
-        <h2>Contact Us</h2>
-        <div class="contact-links">
-            <a href="https://www.facebook.com/share/1ASA6T4iAu/" target="_blank">
-                <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://www.instagram.com/marwal.eg" target="_blank">
+    <section class="contact-area">
+        <h2 style="color: var(--dark-green);">تواصلوا معنا</h2>
+        <div class="social-buttons">
+            <a href="https://www.instagram.com/marwal.eg" class="social-btn" target="_blank">
                 <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.facebook.com/share/1ASA6T4iAu/" class="social-btn" target="_blank">
+                <i class="fab fa-facebook-f"></i> Facebook
             </a>
         </div>
     </section>
 
     <footer>
-        © 2025 MARWAL HANDMADE
+        MARWAL HANDMADE 2026 © - صُنع بكل حب في رمضان
     </footer>
 
 </body>
