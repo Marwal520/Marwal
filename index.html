@@ -1,160 +1,235 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marwal | Boutique</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&family=Montserrat:wght@100;200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-<title>Marwal Handmade</title>
+    <style>
+        :root {
+            --primary-green: #233416;
+            --gold-subtle: #d4af37;
+            --white: #ffffff;
+            --bg-light: #fcfaf5;
+        }
 
-<!-- 🎯 Meta Tags للمعاينة على فيسبوك وواتساب وكل التطبيقات -->
-<meta property="og:title" content="Marwal - Handmade Boho Macrame Products">
-<meta property="og:description" content="أفضل قطع مكرمية يدوية لـ Ramadan والمناسبات من Marwal">
-<meta property="og:image" content="https://i.postimg.cc/mr6mnwjG/FB-IMG-1754667050037.jpg">
-<meta property="og:url" content="https://marwal520.github.io/MARWAL/">
-<meta property="og:type" content="website">
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Montserrat', 'Cairo', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--primary-green);
+            scroll-behavior: smooth;
+        }
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        /* --- 1. الهيدر (اللوجو فوق في النص) --- */
+        header {
+            position: absolute;
+            top: 0; width: 100%;
+            padding: 40px 0;
+            z-index: 100;
+            text-align: center;
+        }
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        .logo img {
+            width: 130px; /* مقاس اللوجو */
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+        }
 
-<style>
-    body{
-        font-family:'Roboto',sans-serif;
-        margin:0;
-        padding:0;
-        background:#e7d8bd;
-        color:#333;
-    }
+        /* --- 2. زينة رمضان (فوانيس بخطوط رفيعة - ستايل فخم) --- */
+        .ramadan-hangings {
+            position: absolute;
+            top: 0; width: 100%; height: 250px;
+            pointer-events: none; z-index: 90;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .hanging {
+            position: relative;
+            animation: sway 4s ease-in-out infinite;
+            transform-origin: top;
+        }
 
-    header{
-        text-align:center;
-        padding:70px 20px;
-        background:#233416;
-    }
+        /* الخيط الرفيع */
+        .hanging::before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 120px;
+            background: linear-gradient(transparent, rgba(255,255,255,0.6));
+            margin: 0 auto;
+        }
 
-    header h1{
-        font-family:'Great Vibes',cursive;
-        font-size:4.5em;
-        color:#e7d8bd;
-        margin:0;
-    }
+        .hanging i {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.4rem;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+        }
 
-    header p{
-        font-family:'Montserrat',sans-serif;
-        color:#f5f5dc;
-        margin-top:10px;
-        font-size:1.2em;
-    }
+        @keyframes sway {
+            0%, 100% { transform: rotate(-4deg); }
+            50% { transform: rotate(4deg); }
+        }
 
-    .categories{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        padding:50px 20px;
-    }
+        /* --- 3. الهيرو (الخلفية والزرار المطلوب) --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), 
+                        url('https://i.postimg.cc/mr6mnwjG/FB-IMG-1754667050037.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-    .category{
-        background:#233416;
-        border-radius:14px;
-        margin:15px;
-        width:250px;
-        text-align:center;
-        padding:25px 15px;
-        box-shadow:0 8px 18px rgba(0,0,0,0.12);
-        cursor:pointer;
-        transition:transform 0.3s;
-    }
+        /* الزرار المطلوب: شفاف، برواز أبيض، كلمة بيضاء */
+        .new-arrival-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 12px 35px;
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 200;
+            cursor: pointer;
+            transition: 0.5s;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
 
-    .category:hover{
-        transform: translateY(-8px);
-    }
+        .new-arrival-btn:hover {
+            background: white;
+            color: var(--primary-green);
+        }
 
-    .category h3{
-        font-family:'Montserrat',sans-serif;
-        color:#e7d8bd;
-        font-weight:700;
-        font-size:1.4em;
-        margin:0;
-    }
+        .hero h1 {
+            color: white;
+            font-weight: 100;
+            font-size: 3.5rem;
+            letter-spacing: 12px;
+            margin: 0;
+            text-transform: uppercase;
+        }
 
-    .contact{
-        text-align:center;
-        padding:40px 20px;
-        background:#e7d8bd;
-    }
+        /* --- 4. الكاشات (الشبكة تحت الهيرو) --- */
+        .categories-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1px; /* خط رفيع بين الكاشات */
+            background-color: #eee; /* لون الفواصل */
+            border-bottom: 1px solid #eee;
+        }
 
-    .contact a{
-        display:inline-block;
-        margin:8px;
-        padding:12px 22px;
-        background:#233416;
-        color:#f5e6c8;
-        text-decoration:none;
-        border-radius:7px;
-        font-family:'Montserrat',sans-serif;
-        font-size:16px;
-    }
+        .cat-item {
+            background-color: white;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-green);
+            transition: 0.4s;
+        }
 
-    .contact a i{
-        margin-right:8px;
-    }
+        .cat-item:hover {
+            background-color: var(--bg-light);
+        }
 
-    .contact a:hover{
-        background:#19250f;
-    }
+        .cat-item i {
+            font-size: 1.2rem;
+            color: var(--gold-subtle);
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
 
-    footer{
-        text-align:center;
-        padding:20px;
-        background:#233416;
-        color:white;
-        font-family:'Montserrat',sans-serif;
-    }
-</style>
+        .cat-item span {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .footer-social a {
+            color: var(--primary-green);
+            margin: 0 20px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .footer-social a:hover { color: var(--gold-subtle); }
+
+        .copy {
+            margin-top: 40px;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            text-transform: uppercase;
+        }
+
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>Marwal</h1>
-    <p>Handmade Boho Macrame Products</p>
-</header>
+    <header>
+        <div class="logo">
+            <img src="https://i.postimg.cc/Gm5jsq9X/Picsart-26-01-22-23-10-11-933.png" alt="Marwal">
+        </div>
+    </header>
 
-<section class="categories">
-    <div class="category" onclick="window.location.href='wall-hanging.html'">
-        <h3>Wall Hanging</h3>
+    <div class="ramadan-hangings">
+        <div class="hanging" style="animation-delay: 0s;"><i class="fa-solid fa-moon"></i></div>
+        <div class="hanging" style="animation-delay: 0.5s;"><i class="fa-solid fa-star"></i></div>
+        <div class="hanging" style="animation-delay: 0.2s;"><i class="fa-solid fa-fan"></i></div>
+        <div class="hanging" style="animation-delay: 0.7s;"><i class="fa-solid fa-star"></i></div>
     </div>
 
-    <div class="category" onclick="window.location.href='bag.html'">
-        <h3>Bag</h3>
-    </div>
+    <section class="hero">
+        <a href="#collection" class="new-arrival-btn">New Arrival</a>
+        
+        <h1>Ramadan</h1>
+        <p style="color: white; font-weight: 200; letter-spacing: 5px; font-size: 0.8rem; margin-top: 15px;">MARWAL HANDMADE</p>
+    </section>
 
-    <div class="category" onclick="window.location.href='ramadan-decoration.html'">
-        <h3>Ramadan Decoration</h3>
-    </div>
+    <section class="categories-section" id="collection">
+        <a href="wall-hanging.html" class="cat-item">
+            <i class="fa-solid fa-border-all"></i>
+            <span>Wall Hanging</span>
+        </a>
+        <a href="bag.html" class="cat-item">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Bags</span>
+        </a>
+        <a href="ramadan-decoration.html" class="cat-item">
+            <i class="fa-solid fa-moon"></i>
+            <span>Ramadan Decor</span>
+        </a>
+        <a href="other.html" class="cat-item">
+            <i class="fa-solid fa-ellipsis"></i>
+            <span>Others</span>
+        </a>
+    </section>
 
-    <div class="category" onclick="window.location.href='other.html'">
-        <h3>Other</h3>
-    </div>
-</section>
-
-<section class="contact">
-    <h2>Contact Us</h2>
-
-    <a href="https://www.instagram.com/marwal.eg?igsh=MXJjMWE5c3l5MG1tbQ==" target="_blank">
-        <i class="fab fa-instagram"></i>Instagram
-    </a>
-
-    <a href="https://www.facebook.com/share/1ASA6T4iAu/" target="_blank">
-        <i class="fab fa-facebook"></i>Facebook
-    </a>
-
-</section>
-
-<footer>
-    <p>© 2025 Marwal Handmade</p>
-</footer>
+    <footer>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/marwal.eg"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1ASA6T4iAu/"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p class="copy">© 2026 Marwal Handmade Boutique. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
